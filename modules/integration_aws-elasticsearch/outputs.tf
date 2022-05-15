@@ -33,3 +33,8 @@ output "jvm_memory_pressure" {
   value       = signalfx_detector.jvm_memory_pressure
 }
 
+output "shard_count" {
+  description = "Detector resource for shard_count"
+  value       = signalfx_detector.shard_count
+}
+

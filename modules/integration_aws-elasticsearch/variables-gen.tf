@@ -273,3 +273,95 @@ variable "fivexx_http_response_at_least_percentage_major" {
   type        = number
   default     = 0.9
 }
+# shard_count detector
+
+variable "shard_count_notifications" {
+  description = "Notification recipients list per severity overridden for shard_count detector"
+  type        = map(list(string))
+  default     = {}
+}
+
+variable "shard_count_aggregation_function" {
+  description = "Aggregation function and group by for shard_count detector (i.e. \".mean(by=['host'])\")"
+  type        = string
+  default     = ""
+}
+
+variable "shard_count_transformation_function" {
+  description = "Transformation function for shard_count detector (i.e. \".mean(over='5m')\")"
+  type        = string
+  default     = ""
+}
+
+variable "shard_count_max_delay" {
+  description = "Enforce max delay for shard_count detector (use \"0\" or \"null\" for \"Auto\")"
+  type        = number
+  default     = null
+}
+
+variable "shard_count_tip" {
+  description = "Suggested first course of action or any note useful for incident handling"
+  type        = string
+  default     = <<-EOF
+    Have a look at https://docs.aws.amazon.com/opensearch-service/latest/developerguide/sizing-domains.html#bp-sharding
+EOF
+}
+
+variable "shard_count_runbook_url" {
+  description = "URL like SignalFx dashboard or wiki page which can help to troubleshoot the incident cause"
+  type        = string
+  default     = ""
+}
+
+variable "shard_count_disabled" {
+  description = "Disable all alerting rules for shard_count detector"
+  type        = bool
+  default     = null
+}
+
+variable "shard_count_disabled_critical" {
+  description = "Disable critical alerting rule for shard_count detector"
+  type        = bool
+  default     = null
+}
+
+variable "shard_count_disabled_major" {
+  description = "Disable major alerting rule for shard_count detector"
+  type        = bool
+  default     = null
+}
+
+variable "shard_count_threshold_critical" {
+  description = "Critical threshold for shard_count detector"
+  type        = number
+  default     = 900
+}
+
+variable "shard_count_lasting_duration_critical" {
+  description = "Minimum duration that conditions must be true before raising alert"
+  type        = string
+  default     = "5m"
+}
+
+variable "shard_count_at_least_percentage_critical" {
+  description = "Percentage of lasting that conditions must be true before raising alert (>= 0.0 and <= 1.0)"
+  type        = number
+  default     = 1
+}
+variable "shard_count_threshold_major" {
+  description = "Major threshold for shard_count detector"
+  type        = number
+  default     = 800
+}
+
+variable "shard_count_lasting_duration_major" {
+  description = "Minimum duration that conditions must be true before raising alert"
+  type        = string
+  default     = "5m"
+}
+
+variable "shard_count_at_least_percentage_major" {
+  description = "Percentage of lasting that conditions must be true before raising alert (>= 0.0 and <= 1.0)"
+  type        = number
+  default     = 1
+}

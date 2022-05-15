@@ -83,6 +83,7 @@ This module creates the following SignalFx detectors which could contain one or 
 |AWS Elasticsearch jvm memory pressure|X|X|-|-|-|
 |AWS Elasticsearch 4xx http response|X|X|-|-|-|
 |AWS Elasticsearch 5xx http response|X|X|-|-|-|
+|AWS Elasticsearch shard count|X|X|-|-|-|
 
 ## How to collect required metrics?
 
@@ -111,6 +112,7 @@ Here is the list of required metrics for detectors in this module.
 * `MasterCPUUtilization`
 * `MasterFreeStorageSpace`
 * `Nodes`
+* `ShardCount`
 * `WarmCPUUtilization`
 * `WarmFreeStorageSpace`
 
