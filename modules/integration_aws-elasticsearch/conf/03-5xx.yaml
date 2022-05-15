@@ -1,0 +1,31 @@
+module: AWS Elasticsearch
+name: 5xx HTTP response
+
+aggregation: true
+filtering: "filter('namespace', 'AWS/ES') and filter('stat', 'sum') and filter('NodeId', '*')"
+tip: "In addition to the runbook, have a look at https://aws.amazon.com/premiumsupport/knowledge-center/opensearch-5xx-errors/"
+runbook_url: "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-cloudwatchmetrics.html"
+value_unit: "%"
+
+signals:
+  A:
+    metric: 5xx
+  B:
+    metric: 2xx
+  signal:
+    # "OpenSearchRequests" can be inferiore to 4xx (I don't know how), it's not the sum of 2xx, 3xx, 4xx and 5xx… so I juste compute
+    # the ration of 5xx over 2xx+5xx
+    formula: (A/(A+B)*100)
+
+rules:
+  critical:
+    threshold: 10
+    comparator: ">"
+    lasting_duration: "5m"
+    lasting_at_least: 0.9
+  major:
+    threshold: 
+    comparator: ">"
+    dependency: critical
+    lasting_duration: "5m"
+    lasting_at_least: 0.9
