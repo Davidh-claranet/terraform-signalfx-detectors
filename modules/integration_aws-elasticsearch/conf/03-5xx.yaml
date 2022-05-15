@@ -1,5 +1,6 @@
 module: AWS Elasticsearch
 name: 5xx HTTP response
+id: fivexx_http_response
 
 aggregation: true
 filtering: "filter('namespace', 'AWS/ES') and filter('stat', 'sum') and filter('NodeId', '*')"

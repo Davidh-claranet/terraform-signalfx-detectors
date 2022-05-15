@@ -209,6 +209,8 @@
 |AWS ElasticSearch cluster free storage space|X|X|-|-|-|
 |AWS ElasticSearch cluster CPU|X|X|-|-|-|
 |AWS Elasticsearch jvm memory pressure|X|X|-|-|-|
+|AWS Elasticsearch 4xx http response|X|X|-|-|-|
+|AWS Elasticsearch 5xx http response|X|X|-|-|-|
 
 
 ## integration_aws-elb

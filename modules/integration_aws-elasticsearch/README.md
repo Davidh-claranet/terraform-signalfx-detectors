@@ -23,8 +23,9 @@ existing [stack](https://github.com/claranet/terraform-signalfx-detectors/wiki/G
 module "signalfx-detectors-integration-aws-elasticsearch" {
   source = "github.com/claranet/terraform-signalfx-detectors.git//modules/integration_aws-elasticsearch?ref={revision}"
 
-  environment   = var.environment
-  notifications = local.notifications
+  environment                          = var.environment
+  notifications                        = local.notifications
+  fivexx_http_response_threshold_major = 42
 }
 ```
 
@@ -80,6 +81,8 @@ This module creates the following SignalFx detectors which could contain one or 
 |AWS ElasticSearch cluster free storage space|X|X|-|-|-|
 |AWS ElasticSearch cluster CPU|X|X|-|-|-|
 |AWS Elasticsearch jvm memory pressure|X|X|-|-|-|
+|AWS Elasticsearch 4xx http response|X|X|-|-|-|
+|AWS Elasticsearch 5xx http response|X|X|-|-|-|
 
 ## How to collect required metrics?
 
@@ -97,6 +100,9 @@ Check the [Related documentation](#related-documentation) section for more detai
 
 Here is the list of required metrics for detectors in this module.
 
+* `2xx`
+* `4xx`
+* `5xx`
 * `ClusterStatus.red`
 * `ClusterStatus.yellow`
 * `CPUUtilization`

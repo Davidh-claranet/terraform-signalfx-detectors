@@ -90,33 +90,33 @@ variable "jvm_memory_pressure_at_least_percentage_major" {
   type        = number
   default     = 1
 }
-# 4xx_http_response detector
+# fourxx_http_response detector
 
-variable "4xx_http_response_notifications" {
-  description = "Notification recipients list per severity overridden for 4xx_http_response detector"
+variable "fourxx_http_response_notifications" {
+  description = "Notification recipients list per severity overridden for fourxx_http_response detector"
   type        = map(list(string))
   default     = {}
 }
 
-variable "4xx_http_response_aggregation_function" {
-  description = "Aggregation function and group by for 4xx_http_response detector (i.e. \".mean(by=['host'])\")"
+variable "fourxx_http_response_aggregation_function" {
+  description = "Aggregation function and group by for fourxx_http_response detector (i.e. \".mean(by=['host'])\")"
   type        = string
   default     = ""
 }
 
-variable "4xx_http_response_transformation_function" {
-  description = "Transformation function for 4xx_http_response detector (i.e. \".mean(over='5m')\")"
+variable "fourxx_http_response_transformation_function" {
+  description = "Transformation function for fourxx_http_response detector (i.e. \".mean(over='5m')\")"
   type        = string
   default     = ""
 }
 
-variable "4xx_http_response_max_delay" {
-  description = "Enforce max delay for 4xx_http_response detector (use \"0\" or \"null\" for \"Auto\")"
+variable "fourxx_http_response_max_delay" {
+  description = "Enforce max delay for fourxx_http_response detector (use \"0\" or \"null\" for \"Auto\")"
   type        = number
   default     = null
 }
 
-variable "4xx_http_response_tip" {
+variable "fourxx_http_response_tip" {
   description = "Suggested first course of action or any note useful for incident handling"
   type        = string
   default     = <<-EOF
@@ -124,91 +124,91 @@ variable "4xx_http_response_tip" {
 EOF
 }
 
-variable "4xx_http_response_runbook_url" {
+variable "fourxx_http_response_runbook_url" {
   description = "URL like SignalFx dashboard or wiki page which can help to troubleshoot the incident cause"
   type        = string
   default     = "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-cloudwatchmetrics.html"
 }
 
-variable "4xx_http_response_disabled" {
-  description = "Disable all alerting rules for 4xx_http_response detector"
+variable "fourxx_http_response_disabled" {
+  description = "Disable all alerting rules for fourxx_http_response detector"
   type        = bool
   default     = null
 }
 
-variable "4xx_http_response_disabled_critical" {
-  description = "Disable critical alerting rule for 4xx_http_response detector"
+variable "fourxx_http_response_disabled_critical" {
+  description = "Disable critical alerting rule for fourxx_http_response detector"
   type        = bool
   default     = null
 }
 
-variable "4xx_http_response_disabled_major" {
-  description = "Disable major alerting rule for 4xx_http_response detector"
+variable "fourxx_http_response_disabled_major" {
+  description = "Disable major alerting rule for fourxx_http_response detector"
   type        = bool
   default     = null
 }
 
-variable "4xx_http_response_threshold_critical" {
-  description = "Critical threshold for 4xx_http_response detector in %"
+variable "fourxx_http_response_threshold_critical" {
+  description = "Critical threshold for fourxx_http_response detector in %"
   type        = number
   default     = 10
 }
 
-variable "4xx_http_response_lasting_duration_critical" {
+variable "fourxx_http_response_lasting_duration_critical" {
   description = "Minimum duration that conditions must be true before raising alert"
   type        = string
   default     = "5m"
 }
 
-variable "4xx_http_response_at_least_percentage_critical" {
+variable "fourxx_http_response_at_least_percentage_critical" {
   description = "Percentage of lasting that conditions must be true before raising alert (>= 0.0 and <= 1.0)"
   type        = number
   default     = 0.9
 }
-variable "4xx_http_response_threshold_major" {
-  description = "Major threshold for 4xx_http_response detector in %"
+variable "fourxx_http_response_threshold_major" {
+  description = "Major threshold for fourxx_http_response detector in %"
   type        = number
   default     = 5
 }
 
-variable "4xx_http_response_lasting_duration_major" {
+variable "fourxx_http_response_lasting_duration_major" {
   description = "Minimum duration that conditions must be true before raising alert"
   type        = string
   default     = "5m"
 }
 
-variable "4xx_http_response_at_least_percentage_major" {
+variable "fourxx_http_response_at_least_percentage_major" {
   description = "Percentage of lasting that conditions must be true before raising alert (>= 0.0 and <= 1.0)"
   type        = number
   default     = 0.9
 }
-# 5xx_http_response detector
+# fivexx_http_response detector
 
-variable "5xx_http_response_notifications" {
-  description = "Notification recipients list per severity overridden for 5xx_http_response detector"
+variable "fivexx_http_response_notifications" {
+  description = "Notification recipients list per severity overridden for fivexx_http_response detector"
   type        = map(list(string))
   default     = {}
 }
 
-variable "5xx_http_response_aggregation_function" {
-  description = "Aggregation function and group by for 5xx_http_response detector (i.e. \".mean(by=['host'])\")"
+variable "fivexx_http_response_aggregation_function" {
+  description = "Aggregation function and group by for fivexx_http_response detector (i.e. \".mean(by=['host'])\")"
   type        = string
   default     = ""
 }
 
-variable "5xx_http_response_transformation_function" {
-  description = "Transformation function for 5xx_http_response detector (i.e. \".mean(over='5m')\")"
+variable "fivexx_http_response_transformation_function" {
+  description = "Transformation function for fivexx_http_response detector (i.e. \".mean(over='5m')\")"
   type        = string
   default     = ""
 }
 
-variable "5xx_http_response_max_delay" {
-  description = "Enforce max delay for 5xx_http_response detector (use \"0\" or \"null\" for \"Auto\")"
+variable "fivexx_http_response_max_delay" {
+  description = "Enforce max delay for fivexx_http_response detector (use \"0\" or \"null\" for \"Auto\")"
   type        = number
   default     = null
 }
 
-variable "5xx_http_response_tip" {
+variable "fivexx_http_response_tip" {
   description = "Suggested first course of action or any note useful for incident handling"
   type        = string
   default     = <<-EOF
@@ -216,59 +216,59 @@ variable "5xx_http_response_tip" {
 EOF
 }
 
-variable "5xx_http_response_runbook_url" {
+variable "fivexx_http_response_runbook_url" {
   description = "URL like SignalFx dashboard or wiki page which can help to troubleshoot the incident cause"
   type        = string
   default     = "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-cloudwatchmetrics.html"
 }
 
-variable "5xx_http_response_disabled" {
-  description = "Disable all alerting rules for 5xx_http_response detector"
+variable "fivexx_http_response_disabled" {
+  description = "Disable all alerting rules for fivexx_http_response detector"
   type        = bool
   default     = null
 }
 
-variable "5xx_http_response_disabled_critical" {
-  description = "Disable critical alerting rule for 5xx_http_response detector"
+variable "fivexx_http_response_disabled_critical" {
+  description = "Disable critical alerting rule for fivexx_http_response detector"
   type        = bool
   default     = null
 }
 
-variable "5xx_http_response_disabled_major" {
-  description = "Disable major alerting rule for 5xx_http_response detector"
+variable "fivexx_http_response_disabled_major" {
+  description = "Disable major alerting rule for fivexx_http_response detector"
   type        = bool
   default     = null
 }
 
-variable "5xx_http_response_threshold_critical" {
-  description = "Critical threshold for 5xx_http_response detector in %"
+variable "fivexx_http_response_threshold_critical" {
+  description = "Critical threshold for fivexx_http_response detector in %"
   type        = number
   default     = 10
 }
 
-variable "5xx_http_response_lasting_duration_critical" {
+variable "fivexx_http_response_lasting_duration_critical" {
   description = "Minimum duration that conditions must be true before raising alert"
   type        = string
   default     = "5m"
 }
 
-variable "5xx_http_response_at_least_percentage_critical" {
+variable "fivexx_http_response_at_least_percentage_critical" {
   description = "Percentage of lasting that conditions must be true before raising alert (>= 0.0 and <= 1.0)"
   type        = number
   default     = 0.9
 }
-variable "5xx_http_response_threshold_major" {
-  description = "Major threshold for 5xx_http_response detector in %"
+variable "fivexx_http_response_threshold_major" {
+  description = "Major threshold for fivexx_http_response detector in %"
   type        = number
 }
 
-variable "5xx_http_response_lasting_duration_major" {
+variable "fivexx_http_response_lasting_duration_major" {
   description = "Minimum duration that conditions must be true before raising alert"
   type        = string
   default     = "5m"
 }
 
-variable "5xx_http_response_at_least_percentage_major" {
+variable "fivexx_http_response_at_least_percentage_major" {
   description = "Percentage of lasting that conditions must be true before raising alert (>= 0.0 and <= 1.0)"
   type        = number
   default     = 0.9

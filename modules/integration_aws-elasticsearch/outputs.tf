@@ -8,6 +8,16 @@ output "cpu_90_15min" {
   value       = signalfx_detector.cpu_90_15min
 }
 
+output "fivexx_http_response" {
+  description = "Detector resource for fivexx_http_response"
+  value       = signalfx_detector.fivexx_http_response
+}
+
+output "fourxx_http_response" {
+  description = "Detector resource for fourxx_http_response"
+  value       = signalfx_detector.fourxx_http_response
+}
+
 output "free_space" {
   description = "Detector resource for free_space"
   value       = signalfx_detector.free_space
