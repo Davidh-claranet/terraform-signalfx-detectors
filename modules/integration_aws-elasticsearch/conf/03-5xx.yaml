@@ -3,7 +3,7 @@ name: 5xx HTTP response
 id: fivexx_http_response
 
 aggregation: true
-filtering: "filter('namespace', 'AWS/ES') and filter('stat', 'sum') and filter('NodeId', '*')"
+filtering: "filter('stat', 'sum') and filter('namespace', 'AWS/ES') and filter('NodeId', '*')"
 tip: "In addition to the runbook, have a look at https://aws.amazon.com/premiumsupport/knowledge-center/opensearch-5xx-errors/"
 runbook_url: "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-cloudwatchmetrics.html"
 value_unit: "%"
