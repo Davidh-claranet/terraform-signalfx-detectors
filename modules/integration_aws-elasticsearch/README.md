@@ -23,9 +23,8 @@ existing [stack](https://github.com/claranet/terraform-signalfx-detectors/wiki/G
 module "signalfx-detectors-integration-aws-elasticsearch" {
   source = "github.com/claranet/terraform-signalfx-detectors.git//modules/integration_aws-elasticsearch?ref={revision}"
 
-  environment                          = var.environment
-  notifications                        = local.notifications
-  fivexx_http_response_threshold_major = 42
+  environment   = var.environment
+  notifications = local.notifications
 }
 ```
 

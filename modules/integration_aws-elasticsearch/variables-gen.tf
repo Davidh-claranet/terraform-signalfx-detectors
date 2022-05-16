@@ -260,6 +260,7 @@ variable "fivexx_http_response_at_least_percentage_critical" {
 variable "fivexx_http_response_threshold_major" {
   description = "Major threshold for fivexx_http_response detector in %"
   type        = number
+  default     = 5
 }
 
 variable "fivexx_http_response_lasting_duration_major" {
