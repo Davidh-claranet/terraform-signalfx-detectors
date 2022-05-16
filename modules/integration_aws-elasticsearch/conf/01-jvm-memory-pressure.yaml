@@ -3,7 +3,7 @@ name: JVM Memory Pressure
 
 transformation: ".min(over='15m')"
 aggregation: true
-filtering: "filter('stat', 'upper') and filter('namespace', 'AWS/ES') and filter('NodeId', '*')"
+filtering: "filter('namespace', 'AWS/ES') and filter('stat', 'upper') and filter('NodeId', '*')"
 value_unit: "%"
 tip: "The cluster could encounter out of memory errors if usage increases. Consider scaling vertically."
 

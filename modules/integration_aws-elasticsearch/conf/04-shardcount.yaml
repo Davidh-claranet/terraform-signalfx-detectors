@@ -2,7 +2,7 @@ module: AWS Elasticsearch
 name: Shard Count
 
 aggregation: true
-filtering: "filter('stat', 'upper') and filter('namespace', 'AWS/ES') and filter('NodeId', '*')"
+filtering: "filter('namespace', 'AWS/ES') and filter('stat', 'upper') and filter('NodeId', '*')"
 tip: "Have a look at https://docs.aws.amazon.com/opensearch-service/latest/developerguide/sizing-domains.html#bp-sharding"
 
 signals:
