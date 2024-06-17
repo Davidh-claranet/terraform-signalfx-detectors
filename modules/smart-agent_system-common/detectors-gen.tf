@@ -171,8 +171,8 @@ resource "signalfx_detector" "filesystem_inodes" {
   }
 
   program_text = <<-EOF
-    used = data('system.filesystem.inodes.usage', filter=filter('state', 'used') and ${module.filtering.signalflow})${var.filesystem_inodes_aggregation_function}${var.filesystem_inodes_transformation_function}
-    free = data('system.filesystem.inodes.usage', filter=filter('state', 'free') and ${module.filtering.signalflow})${var.filesystem_inodes_aggregation_function}${var.filesystem_inodes_transformation_function}
+    used = data('system.filesystem.inodes.usage', filter=filter('state', 'used') and (not filter('fs_type', 'squashfs') and not filter('type', 'squashfs')) and ${module.filtering.signalflow})${var.filesystem_inodes_aggregation_function}${var.filesystem_inodes_transformation_function}
+    free = data('system.filesystem.inodes.usage', filter=filter('state', 'free') and (not filter('fs_type', 'squashfs') and not filter('type', 'squashfs')) and ${module.filtering.signalflow})${var.filesystem_inodes_aggregation_function}${var.filesystem_inodes_transformation_function}
     signal = (used / (used + free) * 100).publish('signal')
     detect(when(signal > ${var.filesystem_inodes_threshold_critical}%{if var.filesystem_inodes_lasting_duration_critical != null}, lasting='${var.filesystem_inodes_lasting_duration_critical}', at_least=${var.filesystem_inodes_at_least_percentage_critical}%{endif})).publish('CRIT')
     detect(when(signal > ${var.filesystem_inodes_threshold_major}%{if var.filesystem_inodes_lasting_duration_major != null}, lasting='${var.filesystem_inodes_lasting_duration_major}', at_least=${var.filesystem_inodes_at_least_percentage_major}%{endif}) and (not when(signal > ${var.filesystem_inodes_threshold_critical}%{if var.filesystem_inodes_lasting_duration_critical != null}, lasting='${var.filesystem_inodes_lasting_duration_critical}', at_least=${var.filesystem_inodes_at_least_percentage_critical}%{endif}))).publish('MAJOR')
